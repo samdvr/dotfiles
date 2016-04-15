@@ -61,8 +61,6 @@ map ,` ysiw`
 " gary bernhardt's hashrocket
 imap <c-l> <space>=><space>
 
-"Go to last edit location with ,.
-nnoremap ,. '.
 
 "When typing a string, your quotes auto complete. Move past the quote
 "while still in insert mode by hitting Ctrl-a. Example:
