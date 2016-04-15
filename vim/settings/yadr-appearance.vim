@@ -27,5 +27,6 @@ else
   end
 endif
 
-colorscheme solarized
-set background=dark
+let base16colorspace=256  " base16 requires this to tell it to use 256 color
+set background=dark  " Tell vim that colorscheme is on a dark background
+colorscheme base16-ocean
