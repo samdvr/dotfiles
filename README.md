@@ -29,9 +29,6 @@ Got questions, concerns, want to hear announcements? Join the [Google Group](htt
 
 Please use GitHub Issues for pull requests or bug reports only.
 
-## Screenshot
-
-![screenshot](http://i.imgur.com/3C1Ze.png)
 
 ## Installation
 
