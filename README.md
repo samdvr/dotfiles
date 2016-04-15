@@ -50,8 +50,20 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/instal
 
 ## Wait, you're not done! Do this:
 
-#### Install iTerm Solarized Colors
-YADR will install Solarized colorschemes into your iTerm. Go to Profiles => Colors => Load Presets to pick Solarized Dark.
+###Installing Base16 Color Theme
+
+* You will need to use a diferent terminal. I used [iTerm
+ Nightly](http://iterm2.com/downloads/nightly/#/section/home) starting with
+ 20141115 based on [this
+ issue](https://github.com/chriskempson/base16-vim/issues/35#issuecomment-63165570) for base16 and
+ how it was resolved.
+
+* Set up iTerm to use the colorscheme. I downloaded a ZIP of the
+ [Base16-iterm2 repo](https://github.com/chriskempson/base16-iterm2) and
+ double clicked on the itemcolors that I wanted to be available as presets in
+ my iTerm settings. Be sure to pick the `.256` verions. Verify that iTerm is
+ using 256 colors by going to Preferences>Terminal> Report Terminal Type
+ should be set to `xterm-256color`.
 
 #### Remap caps-lock to escape with [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
 The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
