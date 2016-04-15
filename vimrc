@@ -113,6 +113,12 @@ set sidescroll=1
 set relativenumber
 set cursorline
 
+" ================ Moving Between Windows ===========
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
 " ================ Search ===========================
 
 set incsearch       " Find the next match as we type the search
