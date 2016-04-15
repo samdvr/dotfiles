@@ -55,6 +55,11 @@ if has('persistent_undo') && !isdirectory(expand('~').'/.vim/backups')
   set undofile
 endif
 
+
+let base16colorspace=256  " base16 requires this to tell it to use 256 color
+set background=dark  " Tell vim that colorscheme is on a dark background
+colorscheme base16-ocean
+
 " ================ Indentation ======================
 
 set autoindent
@@ -114,6 +119,39 @@ set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MAPS TO JUMP TO SPECIFIC TARGETS AND FILES
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! SelectaCommand(choice_command, selecta_args, vim_command)
+  try
+    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
+  catch /Vim:Interrupt/
+    " Swallow the ^C so that the redraw below happens; otherwise there will be
+    " leftovers from selecta on the screen
+    redraw!
+    return
+  endtry
+  redraw!
+  exec a:vim_command . " " . selection
+endfunction
+
+
+function! SelectaBuffer()
+  let bufnrs = filter(range(1, bufnr("$")), 'buflisted(v:val)')
+  let buffers = map(bufnrs, 'bufname(v:val)')
+  call SelectaCommand('echo "' . join(buffers, "\n") . '"', "", ":b")
+endfunction
+
+" Fuzzy select a buffer. Open the selected buffer with :b.
+
+map <leader>f :call SelectaCommand("find . -path tags -prune -or -path ./.vim-flavor -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -path ./" . expand('%') . " -prune -or -type f -print", "", ":e")<cr>
+map <leader>gt :SelectaTag<cr>
+nnoremap <leader>. :OpenAlternate<cr>
+map <leader>e :Explore<cr>
+
+" ====== Tests ========"
+map <Leader>t :!bundle exec rspec %<cr>
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
