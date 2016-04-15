@@ -153,7 +153,7 @@ nnoremap <leader>. :OpenAlternate<cr>
 map <leader>e :Explore<cr>
 
 " ====== Tests ========"
-map <Leader>t :!bundle exec rspec %<cr>
+map <Leader>t :!spring exec rspec %<cr>
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
