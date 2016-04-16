@@ -62,6 +62,18 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/instal
  using 256 colors by going to Preferences>Terminal> Report Terminal Type
  should be set to `xterm-256color`.
 
+* Next you'll need get
+ [Base16-shell](https://github.com/chriskempson/base16-shell) and follow the
+ directions. This will actually provide you a way to test that everything is
+ working correctly. For me, since I am using `zsh` I added the following to
+ my `~/.zshrc` file.
+
+```zsh
+BASE16_SCHEME="ocean"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+```
+
 #### Remap caps-lock to escape with [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
 The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
 
